@@ -119,7 +119,7 @@ RUN set -eux; \
 	chmod -R +rX .; \
 	ls; \
 	pwd; \
-	chmod 777 logs temp work \
+	chmod 777 logs temp work; \
 \
 # verify Tomcat Native is working properly
 \ && set -e \
