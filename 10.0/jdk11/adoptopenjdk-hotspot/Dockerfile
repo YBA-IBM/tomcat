@@ -119,10 +119,11 @@ RUN set -eux; \
 	chmod -R +rX .; \
 	ls; \
 	pwd; \
-	chmod 777 logs temp work; \
-\
+	chmod 777 logs temp work
+
 # verify Tomcat Native is working properly
-	nativeLines="$(catalina.sh configtest 2>&1)" \
+RUN set -e \
+	&& nativeLines="$(catalina.sh configtest 2>&1)" \
 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" \
 	&& nativeLines="$(echo "$nativeLines" | sort -u)" \
 	&& if ! echo "$nativeLines" | grep -E 'INFO: Loaded( APR based)? Apache Tomcat Native library' >&2; then \
