@@ -122,7 +122,7 @@ RUN set -eux; \
 	chmod 777 logs temp work; \
 \
 # verify Tomcat Native is working properly
-\ && set -e \
+\  set -e \
 	&& nativeLines="$(catalina.sh configtest 2>&1)" \
 	&& nativeLines="$(echo "$nativeLines" | grep 'Apache Tomcat Native')" \
 	&& nativeLines="$(echo "$nativeLines" | sort -u)" \
