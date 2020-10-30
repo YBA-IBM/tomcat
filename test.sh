@@ -9,7 +9,7 @@ export ANSI_RESET="\e[0m"
 echo -e "\n $ANSI_YELLOW *** FUNCTIONAL TEST(S) *** $ANSI_RESET \n"
 
 echo -e "$ANSI_YELLOW Run basic functions described in readme: $ANSI_RESET"
-docker run -it --rm -n tomcat -p 8888:8080 quay.io/ibmz/tomcat:10.0
+docker run -it --rm --name tomcat -p 8888:8080 quay.io/ibmz/tomcat:10.0
 curl 0.0.0.0:8888
 docker stop tomcat
 docker network rm somenetwork
